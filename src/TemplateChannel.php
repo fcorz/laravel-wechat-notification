@@ -14,7 +14,7 @@ use Illuminate\Notifications\Notification;
 class TemplateChannel
 {
 
-    public function send($notifiable, Notification $notification, $account = "default")
+    public function send($notifiable, Notification $notification)
     {
         $message = $notification->toWechat($notifiable);
 
