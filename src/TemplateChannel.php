@@ -19,7 +19,7 @@ class TemplateChannel
         $message = $notification->toWechat($notifiable);
 
         // some validate
-        $config = config(\sprintf('wechat.official_account.%s', $account), []);
+        $config = config('wechat.official_account.default', []);
 
         if (empty($config)) {
             // throw Exception
