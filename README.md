@@ -1,4 +1,4 @@
-<h1 align="center"> laravel-wechat-notification </h1>
+<h1 align="center"> laravel-wechat-notification（开发中） </h1>
 
 <p align="center"> .</p>
 
