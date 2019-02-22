@@ -15,7 +15,7 @@ class TemplateMessage
     public $url;
     public $data;
 
-    public function __construct($param)
+    public function __construct($param = null)
     {
         $this->openid      = $param->openid ?? '';
         $this->template_id = $param->template_id ?? '';
