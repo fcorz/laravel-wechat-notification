@@ -16,7 +16,7 @@ class TemplateNotification extends Notification implements ShouldQueue
 
     /**
      * TemplateNotification constructor.
-     * @param     $data
+     * @param     $template_message
      * @param int $delay
      */
     public function __construct($template_message, $delay = 0)
@@ -41,10 +41,14 @@ class TemplateNotification extends Notification implements ShouldQueue
         return [TemplateChannel::class];
     }
 
+    /**
+     * @param $notifiable
+     * @return \Fengchenorz\Wechat\TemplateMessage
+     */
     public function toWechat($notifiable)
     {
         // data example
-        // $data = [
+        // $this->template_message->data = [
         //     'first'    => 'Test First',
         //     'keyword1' => 'keyword1',
         //     'keyword2' => 'keyword2',
