@@ -1,0 +1,19 @@
+{
+    "name": "fengchenorz\/laravel-wechat-notification",
+    "description": "Package description here.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "冯臣",
+            "email": "fengchenorz@gmail.com"
+        }
+    ],
+    "require": {
+        "overtrue/laravel-wechat": "~4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fengchenorz\\LaravelWechatNotification\\": "src"
+        }
+    }
+}
