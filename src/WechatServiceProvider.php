@@ -28,6 +28,7 @@ class WechatServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        
     }
 
 }

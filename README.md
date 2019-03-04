@@ -1,28 +1,23 @@
-<h1 align="center"> laravel-wechat-notification（开发中） </h1>
+<h1 align="center"> laravel-wechat-notification </h1>
 
-<p align="center"> .</p>
+> ✎ 基于 EasyWeChat 和 Laravel 5的消息模板通知
 
+## 环境要求
+* PHP >= 7.0
 
-## Installing
+* Laravel >= 5.5
+
+* EasyWeChat 4.0
+
+## 安装
 
 ```shell
 $ composer require fengchenorz/laravel-wechat-notification -vvv
 ```
 
-## Usage
+## 使用
 
-TODO
+[为你提供了一个demo](https://github.com/fengchenorz/laravel-wechat-notification/blob/master/demo/TemplateNotification.php)
 
-## Contributing
-
-You can contribute in one of three ways:
-
-1. File bug reports using the [issue tracker](https://github.com/fengchenorz/laravel-wechat-notification/issues).
-2. Answer questions or fix bugs on the [issue tracker](https://github.com/fengchenorz/laravel-wechat-notification/issues).
-3. Contribute new features or update the wiki.
-
-_The code contribution process is not very formal. You just need to make sure that you follow the PSR-0, PSR-1, and PSR-2 coding guidelines. Any new code contributions must be accompanied by unit tests where applicable._
-
-## License
-
-MIT
+## 参考
+[overtrue/laravel-wechat](https://github.com/overtrue/laravel-wechat)

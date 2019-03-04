@@ -28,6 +28,11 @@ class TemplateChannel
         $this->app = app($config);
     }
 
+    /**
+     * @param                                        $notifiable
+     * @param \Illuminate\Notifications\Notification $notification
+     * @return object
+     */
     public function send($notifiable, Notification $notification)
     {
         $message = $notification->toWechat($notifiable);
