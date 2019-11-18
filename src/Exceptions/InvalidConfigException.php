@@ -6,7 +6,7 @@
  * Time: 上午11:04
  */
 
-namespace Fengchenorz\Wechat\Exceptions;
+namespace Fengchenorz\WechatNotification\Exceptions;
 
 class InvalidConfigException extends Exception
 {

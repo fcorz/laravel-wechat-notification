@@ -6,7 +6,7 @@
  * Time: 上午11:03
  */
 
-namespace Fengchenorz\Wechat\Exceptions;
+namespace Fengchenorz\WechatNotification\Exceptions;
 
 class Exception extends \Exception
 {

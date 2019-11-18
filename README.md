@@ -15,7 +15,25 @@ $ composer require fengchenorz/laravel-wechat-notification -vvv
 
 ## 使用
 
-[为你提供了一个demo](https://github.com/fengchenorz/laravel-wechat-notification/blob/master/demo/TemplateNotification.php)
+### User
+
+~~~php
+class User
+{
+    use Notifiable;
+
+    public function routeNotificationForWechat()
+    {
+        return 'xxxx'; // openid
+    }
+}
+~~~
+
+### 发送
+
+~~~php
+\Notification::send($user, new \Fengchenorz\WechatNotification\TemplateNotification($templateId, $url, $data));
+~~~
 
 ## 参考
 [overtrue/laravel-wechat](https://github.com/overtrue/laravel-wechat)
