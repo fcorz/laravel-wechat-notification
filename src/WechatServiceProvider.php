@@ -9,6 +9,7 @@
 namespace Fengchenorz\WechatNotification;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Notifications\ChannelManager;
 
 class WechatServiceProvider extends ServiceProvider
 {
@@ -18,7 +19,7 @@ class WechatServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app->when(TemplateChannel::class)->give('wechat_notice');
+        //
     }
 
     /**
@@ -27,7 +28,9 @@ class WechatServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        
+        $this->app->make(ChannelManager::class)->extend('wechat_notice', function ($app) {
+            return $app->make(TemplateChannel::class);
+        });
     }
 
 }
