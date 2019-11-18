@@ -15,14 +15,17 @@ class TemplateMessage
     public $url;
     public $data;
 
-    public function __construct($param = null)
+    public function __construct($openId = '', $templateId = '', $url = '', $data = [])
     {
-        $this->openid      = $param->openid ?? '';
-        $this->template_id = $param->template_id ?? '';
-        $this->url         = $param->url ?? '';
-        $this->data        = $param->data ?? '';
+        $this->openid      = $openId;
+        $this->template_id = $templateId;
+        $this->url         = $url;
+        $this->data        = $data;
     }
 
+    /**
+     * @return self
+     */
     public function to($openid)
     {
         $this->openid = $openid;
@@ -30,6 +33,9 @@ class TemplateMessage
         return $this;
     }
 
+    /**
+     * @return self
+     */
     public function template($template_id)
     {
         $this->template_id = $template_id;
@@ -37,6 +43,9 @@ class TemplateMessage
         return $this;
     }
 
+    /**
+     * @return self
+     */
     public function url($url)
     {
         $this->url = $url;
@@ -44,6 +53,9 @@ class TemplateMessage
         return $this;
     }
 
+    /**
+     * @return self
+     */
     public function data($data)
     {
         $this->data = $data;

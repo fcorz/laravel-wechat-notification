@@ -12,14 +12,14 @@ class TemplateNotification extends Notification implements ShouldQueue
 {
     use Queueable;
 
-    public $template_message;
+    public $templateMessage;
 
     /**
      * TemplateNotification constructor.
-     * @param     $template_message
+     * @param     $templateMessage
      * @param int $delay
      */
-    public function __construct($template_message, $delay = 0)
+    public function __construct($templateMessage, $delay = 0)
     {
         $this->queue = 'notification';
         // 延時執行
@@ -27,7 +27,7 @@ class TemplateNotification extends Notification implements ShouldQueue
         // 嘗試次數
         $this->tries = 3;
 
-        $this->template_message = $template_message;
+        $this->templateMessage = $templateMessage;
     }
 
     /**
@@ -48,7 +48,7 @@ class TemplateNotification extends Notification implements ShouldQueue
     public function toWechat($notifiable)
     {
         // data example
-        // $this->template_message->data = [
+        // $this->templateMessage->data = [
         //     'first'    => 'Test First',
         //     'keyword1' => 'keyword1',
         //     'keyword2' => 'keyword2',
@@ -57,10 +57,10 @@ class TemplateNotification extends Notification implements ShouldQueue
         // ];
 
         return (new TemplateMessage())
-            ->to($this->template_message->openid)
-            ->template($this->template_message->template_id)
-            ->url($this->template_message->url)
-            ->data($this->template_message->data);
+            ->to($this->templateMessage->openid)
+            ->template($this->templateMessage->template_id)
+            ->url($this->templateMessage->url)
+            ->data($this->templateMessage->data);
     }
 
 }
