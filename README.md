@@ -4,9 +4,7 @@
 
 ## 环境要求
 * PHP >= 7.0
-
 * Laravel >= 5.5
-
 * EasyWeChat 4.0
 
 ## 安装
