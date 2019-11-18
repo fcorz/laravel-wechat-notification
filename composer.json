@@ -1,6 +1,6 @@
 {
-    "name": "fengchenorz\/laravel-wechat-notification",
-    "description": "Package description here.",
+    "name": "fengchenorz/laravel-wechat-notification",
+    "description": "基于 EasyWeChat 和 Laravel 5的消息模板通知",
     "license": "MIT",
     "authors": [
         {
@@ -13,7 +13,8 @@
         }
     ],
     "require": {
-        "overtrue/laravel-wechat": "~4.0"
+        "illuminate/notifications": "^6.0|^7.0",
+        "overtrue/laravel-wechat": "^5.0"
     },
     "autoload": {
         "psr-4": {

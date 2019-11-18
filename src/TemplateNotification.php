@@ -44,7 +44,7 @@ class TemplateNotification extends Notification implements ShouldQueue
      */
     public function via($notifiable)
     {
-        return [TemplateChannel::class];
+        return ['wechat_notice'];
     }
 
     /**
