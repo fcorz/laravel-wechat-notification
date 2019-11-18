@@ -6,44 +6,47 @@
  * Time: 上午11:47
  */
 
-namespace Fengchenorz\Wechat;
+namespace Fengchenorz\WechatNotification;
 
 class TemplateMessage
 {
     public $openid;
-    public $template_id;
+    public $templateId;
     public $url;
     public $data;
 
     public function __construct($openId = '', $templateId = '', $url = '', $data = [])
     {
         $this->openid      = $openId;
-        $this->template_id = $templateId;
+        $this->templateId = $templateId;
         $this->url         = $url;
         $this->data        = $data;
     }
 
     /**
+     * @param string $openId
      * @return self
      */
-    public function to($openid)
+    public function to($openId)
     {
-        $this->openid = $openid;
+        $this->openid = $openId;
 
         return $this;
     }
 
     /**
+     * @param string $templateId
      * @return self
      */
-    public function template($template_id)
+    public function template($templateId)
     {
-        $this->template_id = $template_id;
+        $this->templateId = $templateId;
 
         return $this;
     }
 
     /**
+     * @param string $url
      * @return self
      */
     public function url($url)
@@ -54,6 +57,7 @@ class TemplateMessage
     }
 
     /**
+     * @param mixed $data
      * @return self
      */
     public function data($data)

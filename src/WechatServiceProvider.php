@@ -6,7 +6,7 @@
  * Time: 下午5:57
  */
 
-namespace Fengchenorz\Wechat;
+namespace Fengchenorz\WechatNotification;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -18,8 +18,7 @@ class WechatServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app->when(TemplateChannel::class)
-            ->give('wechat_notice');
+        $this->app->when(TemplateChannel::class)->give('wechat_notice');
     }
 
     /**

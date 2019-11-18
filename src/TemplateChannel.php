@@ -6,9 +6,9 @@
  * Time: 上午11:47
  */
 
-namespace Fengchenorz\Wechat;
+namespace Fengchenorz\WechatNotification;
 
-use Fengchenorz\Wechat\Exceptions\InvalidConfigException;
+use Fengchenorz\WechatNotification\Exceptions\InvalidConfigException;
 use Illuminate\Notifications\Notification;
 
 class TemplateChannel
@@ -36,20 +36,14 @@ class TemplateChannel
     public function send($notifiable, Notification $notification)
     {
         $message = $notification->toWechat($notifiable);
+        $to      = $notifiable->routeNotificationFor('wechat');
 
-        try {
-            return $this->app->template_message->send([
-                'touser'      => $message->openid,
-                'template_id' => $message->template_id,
-                'url'         => $message->url,
-                'data'        => $message->data,
-            ]);
-        } catch (\Exception $e) {
-            return (object)[
-                'errcode' => $e->getCode(),
-                'errmsg'  => $e->getMessage(),
-            ];
-        }
+        return $this->app->template_message->send([
+            'touser'      => $to,
+            'template_id' => $message->templateId,
+            'url'         => $message->url,
+            'data'        => $message->data,
+        ]);
     }
 
 }

@@ -6,6 +6,10 @@
         {
             "name": "冯臣",
             "email": "fengchenorz@gmail.com"
+        },
+        {
+            "name": "huangdijia",
+            "email": "huangdijia@gmail.com"
         }
     ],
     "require": {
@@ -13,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Fengchenorz\\LaravelWechatNotification\\": "src"
+            "Fengchenorz\\WechatNotification\\": "src"
         }
     }
 }
