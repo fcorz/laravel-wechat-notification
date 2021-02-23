@@ -10,7 +10,7 @@
 ## 安装
 
 ```shell
-$ composer require fengchenorz/laravel-wechat-notification -vvv
+$ composer require fcorz/laravel-wechat-notification -vvv
 ```
 
 ## 使用
@@ -32,7 +32,7 @@ class User
 ### 发送
 
 ~~~php
-\Notification::send($user, new \Fengchenorz\WechatNotification\TemplateNotification($templateId, $url, $data));
+\Notification::send($user, new \fcorz\WechatNotification\TemplateNotification($templateId, $url, $data));
 ~~~
 
 ## 参考

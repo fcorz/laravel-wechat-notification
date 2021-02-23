@@ -1,36 +1,41 @@
 <?php
+
+declare(strict_types=1);
 /**
- * Created by PhpStorm.
- * User: fengchen
- * Date: 2019/2/22
- * Time: 上午11:47
+ * This file is part of mas.
+ *
+ * @link     https://github.com/fcorz/laravel-wechat-notification
+ * @document https://github.com/fcorz/laravel-wechat-notification/blob/master/README.md
+ * @contact  fengchenorz@gmail.com
  */
+namespace fcorz\WechatNotification;
 
-namespace Fengchenorz\WechatNotification;
-
-use Fengchenorz\WechatNotification\Exceptions\InvalidConfigException;
+use fcorz\WechatNotification\Exceptions\InvalidConfigException;
 use Illuminate\Notifications\Notification;
 
 class TemplateChannel
 {
     public $app;
 
+    /**
+     * init channel.
+     * TemplateChannel constructor.
+     * @throws InvalidConfigException
+     */
     public function __construct()
     {
-        // some validate
         $config = config('wechat.official_account.default', []);
 
         if (empty($config)) {
-            // throw Exception
-            throw new InvalidConfigException("Invalid wechat official_account config");
+            throw new InvalidConfigException('Invalid wechat official_account config');
         }
 
         $this->app = app($config);
     }
 
     /**
-     * @param                                        $notifiable
-     * @param \Illuminate\Notifications\Notification $notification
+     * send.
+     * @param $notifiable
      * @return object
      */
     public function send($notifiable, Notification $notification)
@@ -45,5 +50,4 @@ class TemplateChannel
             'data'        => $message->data,
         ]);
     }
-
 }

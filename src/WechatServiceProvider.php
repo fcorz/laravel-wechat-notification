@@ -1,30 +1,29 @@
 <?php
+
+declare(strict_types=1);
 /**
- * Created by PhpStorm.
- * User: fengchen
- * Date: 2019/2/22
- * Time: 下午5:57
+ * This file is part of mas.
+ *
+ * @link     https://github.com/fcorz/laravel-wechat-notification
+ * @document https://github.com/fcorz/laravel-wechat-notification/blob/master/README.md
+ * @contact  fengchenorz@gmail.com
  */
+namespace fcorz\WechatNotification;
 
-namespace Fengchenorz\WechatNotification;
-
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Notifications\ChannelManager;
+use Illuminate\Support\ServiceProvider;
 
 class WechatServiceProvider extends ServiceProvider
 {
-
     /**
-     * Bootstrap the application services
+     * Bootstrap the application services.
      */
     public function boot()
     {
-        //
     }
 
     /**
-     * 在容器中注册绑定.
-     * @return void
+     * Register the service provider.
      */
     public function register()
     {
@@ -32,5 +31,4 @@ class WechatServiceProvider extends ServiceProvider
             return $app->make(TemplateChannel::class);
         });
     }
-
 }

@@ -1,26 +1,34 @@
 <?php
 
-namespace Fengchenorz\WechatNotification;
+declare(strict_types=1);
+/**
+ * This file is part of mas.
+ *
+ * @link     https://github.com/fcorz/laravel-wechat-notification
+ * @document https://github.com/fcorz/laravel-wechat-notification/blob/master/README.md
+ * @contact  fengchenorz@gmail.com
+ */
+namespace fcorz\WechatNotification;
 
-use Fengchenorz\WechatNotification\TemplateChannel;
-use Fengchenorz\WechatNotification\TemplateMessage;
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Notifications\Notification;
 
 class TemplateNotification extends Notification implements ShouldQueue
 {
     use Queueable;
 
     protected $templateId;
+
     protected $url;
+
     protected $data;
 
     /**
      * TemplateNotification constructor.
-     * @param     $templateId
-     * @param     $url
-     * @param     $data
+     * @param $templateId
+     * @param $url
+     * @param $data
      * @param int $delay
      */
     public function __construct($templateId = '', $url = '', $data = [], $delay = 0)
@@ -39,7 +47,7 @@ class TemplateNotification extends Notification implements ShouldQueue
     /**
      * Get the notification's delivery channels.
      *
-     * @param  mixed $notifiable
+     * @param mixed $notifiable
      * @return array
      */
     public function via($notifiable)
@@ -49,7 +57,7 @@ class TemplateNotification extends Notification implements ShouldQueue
 
     /**
      * @param $notifiable
-     * @return \Fengchenorz\WechatNotification\TemplateMessage
+     * @return \fcorz\WechatNotification\TemplateMessage
      */
     public function toWechat($notifiable)
     {
@@ -58,5 +66,4 @@ class TemplateNotification extends Notification implements ShouldQueue
             ->url($this->url)
             ->data($this->data);
     }
-
 }
