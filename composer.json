@@ -20,9 +20,19 @@
         "friendsofphp/php-cs-fixer": "^2.14",
         "phpunit/phpunit": "^9.3"
     },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
     "autoload": {
         "psr-4": {
             "fcorz\\WechatNotification\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Fcorz\\WechatNotification\\Tests\\": "tests"
         }
     }
 }

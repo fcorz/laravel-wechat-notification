@@ -8,10 +8,12 @@ declare(strict_types=1);
  * @document https://github.com/fcorz/laravel-wechat-notification/blob/master/README.md
  * @contact  fengchenorz@gmail.com
  */
+
 namespace fcorz\WechatNotification;
 
 use fcorz\WechatNotification\Exceptions\InvalidConfigException;
 use Illuminate\Notifications\Notification;
+use Illuminate\Support\Facades\Config;
 
 class TemplateChannel
 {
@@ -24,7 +26,7 @@ class TemplateChannel
      */
     public function __construct()
     {
-        $config = config('wechat.official_account.default', []);
+        $config = Config::get("wechat.official_account.default", []);
 
         if (empty($config)) {
             throw new InvalidConfigException('Invalid wechat official_account config');
