@@ -3,9 +3,9 @@
 > ✎ 基于 EasyWeChat 和 Laravel 的消息模板通知
 
 ## 环境要求
-* PHP >= 7.0
-* Laravel >= 5.6
-* EasyWeChat 5.0
+* PHP >= 7.2
+* Laravel >= 7.0
+* EasyWeChat >= 5.0
 
 ## 安装
 
