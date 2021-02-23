@@ -1,5 +1,5 @@
 <h1 align="center"> laravel-wechat-notification </h1>
-<p align="center">:rainbow: 基于高德开放平台的 PHP 天气信息组件。</p>
+<p align="center">:rainbow: 基于 EasyWeChat 和 Laravel 的模板消息通知组件。</p>
 
 [![Build Status](https://travis-ci.org/fcorz/laravel-wechat-notification.svg?branch=master)](https://travis-ci.org/fcorz/laravel-wechat-notification)
 
