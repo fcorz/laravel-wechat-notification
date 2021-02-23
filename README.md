@@ -1,6 +1,8 @@
 <h1 align="center"> laravel-wechat-notification </h1>
+<p align="center">:rainbow: 基于高德开放平台的 PHP 天气信息组件。</p>
 
-> ✎ 基于 EasyWeChat 和 Laravel 的消息模板通知
+[![Build Status](https://travis-ci.org/fcorz/laravel-wechat-notification.svg?branch=master)](https://travis-ci.org/fcorz/laravel-wechat-notification)
+
 
 ## 环境要求
 * PHP >= 7.2
@@ -15,7 +17,7 @@ $ composer require fcorz/laravel-wechat-notification -vvv
 
 ## 使用
 
-### User
+#### User
 
 ~~~php
 class User
@@ -29,7 +31,7 @@ class User
 }
 ~~~
 
-### 发送
+#### 发送
 
 ~~~php
 \Notification::send($user, new \fcorz\WechatNotification\TemplateNotification($templateId, $url, $data));
